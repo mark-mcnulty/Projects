@@ -12,6 +12,9 @@
 // SCK - Serial Clk                     == clk
 // SS - Slave Select                    == CS
 
+
+// https://www.tutorialspoint.com/arduino/arduino_serial_peripheral_interface.htm
+
 void setup(void) {
   Serial.begin(115200);
 
