@@ -1,4 +1,3 @@
-#include <cmath>
 #include "stepper.h"
 using namespace std;
 
@@ -10,10 +9,12 @@ NOTES:
     - 5 steps per number for the lock
 */
 
-stepper::stepper(int stepPinIn, int dirPinIn, int delayVelocityIn) {
+stepper::stepper(int stepPinIn, int dirPinIn, int enableIn, int delayVelocityIn) {
     // define the pins
     stepPin = stepPinIn;
     dirPin = dirPinIn;
+    enable = enableIn;
+    
     delayVelocity = delayVelocityIn;
     steps = 0;
     angle = 0;
@@ -21,6 +22,9 @@ stepper::stepper(int stepPinIn, int dirPinIn, int delayVelocityIn) {
     // set the pins as outputs
     pinMode(stepPin, OUTPUT);
     pinMode(dirPin, OUTPUT);
+    pinMode(enable, OUTPUT);
+
+    digitalWrite(enable, LOW);
 }
 
 /*
@@ -36,6 +40,8 @@ void stepper::move(int stepsIn){
     else {
         digitalWrite(dirPin, LOW);
     }
+
+    stepsIn = abs(stepsIn); 
 
     // rotate the motor
     for(int x = 0; x < stepsIn; x++) {
@@ -173,30 +179,3 @@ void stepper::setAngle(float angleIn){
 void stepper::setDelayVelocity(int delayVelocityIn){
     delayVelocity = delayVelocityIn;
 }
-
-
-
-/*
-    // define the constructor
-        stepper(int stepPin, int dirPin);
-
-    // control the stepper motor
-        void moveRelSteps(int steps);
-        void moveAbsSteps(int steps);
-        void moveRelAngle(int angle);
-        void moveAbsAngle(int angle);
-
-    // general functions
-        void fullTurn(int direction);
-        void resetLock();
-
-    // get the private variables
-        int getAngle();
-        int getSteps();
-        int getDelayVelocity();
-
-    // set the private variables
-        void setAngle(int angle);
-        void setSteps(int steps);
-        void setDelayVelocity(int delayVelocity);
-*/

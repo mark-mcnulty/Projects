@@ -1,4 +1,4 @@
-#ifdef stepper_h
+#ifndef stepper_h
 #define stepper_h
 
 #include <Arduino.h>
@@ -9,13 +9,15 @@ class stepper {
     // define  
         int stepPin;
         int dirPin;
+        int enable;
+        
         float angle;
         int steps;
         int delayVelocity;
 
     public:
     // define the constructor
-        stepper(int stepPinIn, int dirPin);
+        stepper(int stepPinIn, int dirPinIn, int enableIn, int delayVelocityIn);
 
     // control the stepper motor
         void move(int stepsIn);
@@ -38,4 +40,6 @@ class stepper {
         void setSteps(int stepsIn);
         void setDelayVelocity(int delayVelocityIn);
 
-}
+};
+
+#endif
