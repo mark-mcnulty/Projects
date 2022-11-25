@@ -4,19 +4,19 @@
     refrence
 
 ## SETUP
-- building the project: 
+building the project:  
 > $ cargo new <project_name>  
-- add dependencies in Cargo.toml at the bottom: 
+dd dependencies in Cargo.toml at the bottom:  
 > [dependencies.arduino-hal]  
 > git = "https://github.com/Rahix/avr-hal"  
 > rev = "92d540c"  
-- build the new dependencies: 
+build the new dependencies:  
 > $ cargo update  
-- make the .cargo folder
+make the .cargo folder:  
 > $ mkdir .cargo
-- make file inside .cargo
+make file inside .cargo  
 > $ nano /.cargo/config.toml
-- edit /.cargo/config.toml
->> [build]
->> target = "avr-atmega328p.json"
-- download the appropriate json file from https://github.com/Rahix/avr-hal/avr-specs/ depends on board
+edit /.cargo/config.toml  
+> [build]
+> target = "avr-atmega328p.json"
+download the appropriate json file from https://github.com/Rahix/avr-hal/avr-specs/ depends on board  
