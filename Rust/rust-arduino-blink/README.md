@@ -4,8 +4,11 @@
     refrence
 
 ## SETUP
-- building the project: $ cargo new <project_name>
+- building the project: 
+> $ cargo new <project_name>  
 - add dependencies in Cargo.toml at the bottom: 
 > [dependencies.arduino-hal]  
 > git = "https://github.com/Rahix/avr-hal"  
 > rev = "92d540c"  
+- build the new dependencies: 
+> $ cargo update  
