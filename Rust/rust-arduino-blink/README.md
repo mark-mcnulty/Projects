@@ -6,6 +6,5 @@ ________________________________________________________________________________
 
 
 SETUP
-    1) building the project: 
-    - $ cargo new <project_name>
-    2)
+- building the project: $ cargo new <project_name>
+- 
