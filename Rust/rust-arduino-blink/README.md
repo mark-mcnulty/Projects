@@ -6,6 +6,6 @@
 ## SETUP
 - building the project: $ cargo new <project_name>
 - add dependencies in Cargo.toml at the bottom: 
-> [dependencies.arduino-hal] \n
-> git = "https://github.com/Rahix/avr-hal" \n
-> rev = "92d540c"
+> [dependencies.arduino-hal]  
+> git = "https://github.com/Rahix/avr-hal"  
+> rev = "92d540c"  
