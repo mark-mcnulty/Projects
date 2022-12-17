@@ -6,7 +6,7 @@ void setup(void) {
     // baud rate for serial monitor
     Serial.begin(9600);
     
-    attachInterrupt(digitalPinToInterrupt(DATA_PIN), interruptRoutine, FALLING);
+    attachInterrupt(digitalPinToInterrupt(DATA_PIN), interruptRoutine, RISING);
     
 }
 
@@ -18,4 +18,5 @@ void interruptRoutine() {
     Serial.print("Interrupt");
     Serial.println(count);
     count += 1;
+    delay(500);
 }
