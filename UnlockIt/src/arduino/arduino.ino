@@ -23,9 +23,9 @@ void setup() {
  */
 void loop() {
   // move the motor to the zero position
-  motor.move(200);
-  delay(2000);
+  motor.move(9);
+  delay(1000);
 
-  motor.move(-200);
-  delay(2000);
+  // motor.move(-200);
+  // delay(2000);
 }
